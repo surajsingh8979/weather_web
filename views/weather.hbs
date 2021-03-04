@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   {{>headerlinkes}}
+
+</head>
+<body>
+  {{>navbar}}
+        <div class="container-fluid main_header">
+          <div class="row">
+              <div class="col-md-10 col-12 mx-auto">
+               <div class="main_content">
+                   <form class="temp_form">
+                       <input type="text" id="cityname" placeholder="Enter your Cityname" autocomplete="off">
+                        <input type="submit" value="Search" id="sumitbtn">
+
+                   </form>
+                      </div>
+                      <div class="tempinfo">
+                          <div class="top_layer">
+                              <p id="day">Tuseday</p>
+                              <p id ="today_data">12 feb</p>
+                          </div>
+                          <div class="main_layer data_hide">
+                              <p id="city_nmae"> Get Output Here</p>
+                              <div class="middle_layer data_hide">
+                                  <p id="temp"><span id="temp_real_val"> 0 </span> <sup> 0</sup></p>
+                                  <p id="temp_status"> <i class="fas fa-cloud-sun-rain" aria-hidden="true"></i></p>
+
+                              </div>
+                          </div>
+
+                      </div>
+
+              </div>
+                </div></div>
+
+               {{> footer}}
+               <script src="js/main.js">
+
+               </script>
+               <script>
+                  
+                   const getCurrentDay=() =>{
+                       let weekday= new Array(7);
+                       weekday[0]= "Sunday";
+                       weekday[1]= "Monday";
+                       weekday[2]= "Tuesday";
+                       weekday[3]= "Wednesday";
+                       weekday[4]= "Thursday";
+                       weekday[5]= "Friday";
+                       weekday[6]= "Saturday";
+                   
+                   let currentTime = new Date();
+                    days = weekday[currentTime.getDay()];
+                  let day= document.getElementById('day');
+                   day.innerText=days;
+                   };
+
+                   getCurrentDay();
+               </script>
+      
+</body>
+</html>
